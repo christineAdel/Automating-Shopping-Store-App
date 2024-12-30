@@ -19,6 +19,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+import com.kms.katalon.core.configuration.RunConfiguration
 
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
@@ -59,10 +60,9 @@ class ShoppingSteps {
 		CartScreen CartScreen = new CartScreen()
 	}
 	// Retrieve the project directory
-	//String projectDir = RunConfiguration.getProjectDir()
+	String projectDir = RunConfiguration.getProjectDir()
 	// Construct the relative path to the APK
-	//String apkPath = projectDir + "/androidApp/General-Store.apk"
-	String apkPath = "C:/Users/Jack/Katalon Studio/ShoppingApp/androidApp/General-Store.apk"
+	String apkPath = projectDir + "/androidApp/General-Store.apk"
 
 	@Given("the app is launched")
 	def launchApp() {
